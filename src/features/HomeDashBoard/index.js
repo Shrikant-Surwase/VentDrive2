@@ -539,6 +539,17 @@ const HomeDashBoard = () => {
               rate: 5,
               location: 'Mumbai, Maharashtra',
               date: '12 Aug 2025',
+              price: 3000,
+              currency: 'Ksh',
+              specifications: {
+                fuel: 'Petrol',
+                transmission: 'Automatic',
+                seats: '5 Seats',
+                airCon: 'Air Con',
+                engine: 'V6',
+              },
+              description: 'Luxury and performance combined in this premium BMW.',
+              rating: 5,
             },
             {
               name: 'Mercedes',
@@ -546,6 +557,17 @@ const HomeDashBoard = () => {
               rate: 4,
               location: 'Bengaluru, Karnataka',
               date: '28 Jul 2025',
+              price: 3500,
+              currency: 'Ksh',
+              specifications: {
+                fuel: 'Diesel',
+                transmission: 'Automatic',
+                seats: '5 Seats',
+                airCon: 'Air Con',
+                engine: 'V8',
+              },
+              description: 'Experience elegance and comfort with this Mercedes.',
+              rating: 4,
             },
             {
               name: 'Nisaan',
@@ -553,6 +575,17 @@ const HomeDashBoard = () => {
               rate: 3,
               location: 'Hyderabad, Telangana',
               date: '05 Jun 2025',
+              price: 2500,
+              currency: 'Ksh',
+              specifications: {
+                fuel: 'Petrol',
+                transmission: 'Manual',
+                seats: '7 Seats',
+                airCon: 'Air Con',
+                engine: 'I4',
+              },
+              description: 'Spacious and reliable, perfect for family trips.',
+              rating: 3,
             },
             {
               name: 'Sabaru',
@@ -560,13 +593,35 @@ const HomeDashBoard = () => {
               rate: 2,
               location: 'Pune, Maharashtra',
               date: '19 May 2025',
+              price: 2200,
+              currency: 'Ksh',
+              specifications: {
+                fuel: 'Petrol',
+                transmission: 'Manual',
+                seats: '5 Seats',
+                airCon: 'Air Con',
+                engine: 'Boxer',
+              },
+              description: 'Adventure-ready with all-wheel drive capability.',
+              rating: 4,
             },
             {
-              name: 'Toyota',
+              name: 'Toyota Fortuner',
               path: require('../../assets/fortuner.jpg'),
-              rate: 1,
-              location: 'Chennai, Tamil Nadu',
-              date: '02 Apr 2025',
+              rate: 5,
+              location: 'Nairobi, Kenya',
+              date: '12 Aug 2025',
+              price: 2000,
+              currency: 'Ksh',
+              specifications: {
+                fuel: 'Petrol',
+                transmission: 'Manual',
+                seats: '7 Seats',
+                airCon: 'Air Con',
+                engine: 'Hybrid',
+              },
+              description: 'Unleash Adventure with the Toyota Fortuner: The Ultimate Ride for Every Journey',
+              rating: 4,
             },
           ]}
           keyExtractor={(item) => item.name}
@@ -577,7 +632,8 @@ const HomeDashBoard = () => {
           }}
           renderItem={({ item, index }) => {
             return (
-              <View
+              <Pressable
+                onPress={() => navigation.navigate('CarDetails', { car: item })}
                 style={{
                   borderWidth: 1,
                   padding: 8,
@@ -634,7 +690,7 @@ const HomeDashBoard = () => {
                     <Text>{item?.date}</Text>
                   </View>
                 </View>
-              </View>
+              </Pressable>
             );
           }}
         />

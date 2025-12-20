@@ -10,6 +10,12 @@ import HomeScreen from './features/HomeScreen';
 import Register from './features/Register';
 import BottomBarNavigation from './features/BottomBarNavigation';
 import HomeDashBoard from './features/HomeDashBoard';
+import BookCarScreen from './features/HomeDashBoard/BookCarScreen';
+import CarDetailsScreen from './features/HomeDashBoard/CarDetailsScreen';
+import BookingSummaryScreen from './features/HomeDashBoard/BookingSummaryScreen';
+import PaymentMethodsScreen from './features/HomeDashBoard/PaymentMethodsScreen';
+import PaymentSuccessScreen from './features/HomeDashBoard/PaymentSuccessScreen';
+import EReceiptScreen from './features/HomeDashBoard/EReceiptScreen';
 
 const Stack = createStackNavigator();
 
@@ -50,6 +56,12 @@ function Root() {
           <Stack.Screen name="BottomBarNavigation" component={BottomBarNavigation} />
           <Stack.Screen name="Landing" component={LandingScreen} />
           <Stack.Screen name="HomeDashBoard" component={HomeDashBoard} />
+          <Stack.Screen name="CarDetails" component={CarDetailsScreen} />
+          <Stack.Screen name="BookCar" component={BookCarScreen} />
+          <Stack.Screen name="BookingSummary" component={BookingSummaryScreen} />
+          <Stack.Screen name="PaymentMethods" component={PaymentMethodsScreen} />
+          <Stack.Screen name="PaymentSuccess" component={PaymentSuccessScreen} />
+          <Stack.Screen name="EReceipt" component={EReceiptScreen} />
         </>
       ) : (
         <>
