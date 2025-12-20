@@ -21,6 +21,7 @@ const BottomBarNavigation = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        animation: 'shift',
       }}
     >
       <Tab.Screen

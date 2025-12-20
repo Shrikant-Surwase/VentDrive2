@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { getFontFamily } from '../../utils/fontFamily';
 import AppScreenWrapper from '../../AppScreenWrapper';
 import { useNavigation } from '@react-navigation/native';
+import firestore from '@react-native-firebase/firestore';
 
 
 const CalendarScreen = () => {

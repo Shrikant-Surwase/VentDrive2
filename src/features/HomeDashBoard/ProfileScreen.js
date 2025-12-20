@@ -34,7 +34,7 @@ const ProfileScreen = () => {
       <View style={styles.container}>
         <Text style={styles.headerText}>Welcome to ProfileScreen !</Text>
         <Pressable onPress={() => signOut(navigation)} style={styles.primaryButton}>
-          <Text style={styles.primaryButtonText}>Create Account</Text>
+          <Text style={styles.primaryButtonText}>sign out</Text>
         </Pressable>
         <Pressable onPress={() => navigation.navigate('Profile')} style={styles.outlineButton}>
           <Text style={styles.outlineButtonText}>Sign in</Text>

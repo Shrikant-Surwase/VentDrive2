@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "515006103705",
+    "project_id": "ventdrive-69dc8",
+    "storage_bucket": "ventdrive-69dc8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515006103705:android:b93ee0f6f7a266ba6bb808",
+        "android_client_info": {
+          "package_name": "com.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgWqZQRIn5tnJx-xZPbxBkdnDu_VN5tpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
