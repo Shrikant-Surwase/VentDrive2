@@ -8,12 +8,13 @@ import RNRestart from 'react-native-restart';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../HomeScreen';
-import {Home,Search,User,MessageSquare,Calendar} from 'react-native-feather'
+import { Home, Search, User, MessageSquare, Calendar } from 'react-native-feather';
 import HomeDashBoard from '../HomeDashBoard';
 import CalendarScreen from '../HomeDashBoard/CalendarScreen';
 import ChatScreen from '../HomeDashBoard/ChatScreen';
 import ProfileScreen from '../HomeDashBoard/ProfileScreen';
 import SearchScreen from '../HomeDashBoard/SearchScreen';
+import BookingsScreen from '../HomeDashBoard/BookingsScreen';
 const Tab = createBottomTabNavigator();
 
 const BottomBarNavigation = () => {
@@ -54,8 +55,8 @@ const BottomBarNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Calendar"
-        component={CalendarScreen}
+        name="Bookings"
+        component={BookingsScreen}
         options={{
           tabBarIcon: ({ focused, color }) => (
             <Calendar

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  ScrollView,
-} from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native';
+import { useNavigation, useRoute, CommonActions } from '@react-navigation/native';
 import {
   ArrowLeft,
   DollarSign,
@@ -38,6 +32,11 @@ const PaymentMethodsScreen = () => {
     console.log('Add card pressed');
   };
 
+  const handleViewBooking = () => {
+    // Navigate to BookingSummary to view booking details
+    navigation.goBack()
+  };
+
   const paymentOptions = [
     { id: 'mpesa', name: 'M-pesa', icon: Smartphone, color: '#00A859' },
     { id: 'airtel', name: 'Airtel Money', icon: Smartphone, color: '#E60000' },
@@ -53,16 +52,12 @@ const PaymentMethodsScreen = () => {
             <ArrowLeft width={22} height={22} stroke="#282828" />
           </Pressable>
           <Text style={styles.headerTitle}>Payment Methods</Text>
-          <View style={styles.iconCircle} />
         </View>
 
         {/* Cash Section */}
         <View style={styles.section}>
           <Text style={styles.sectionLabel}>Cash</Text>
-          <Pressable
-            style={styles.paymentOption}
-            onPress={() => setSelectedPaymentMethod('Cash')}
-          >
+          <Pressable style={styles.paymentOption} onPress={() => setSelectedPaymentMethod('Cash')}>
             <View style={styles.paymentOptionLeft}>
               <View style={[styles.iconContainer, { backgroundColor: '#00A859' }]}>
                 <DollarSign width={24} height={24} stroke="#fff" />
@@ -149,7 +144,6 @@ const styles = StyleSheet.create({
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
     paddingHorizontal: 20,
     paddingTop: 14,
     paddingBottom: 16,
@@ -170,6 +164,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: '#E2E7EF',
+    marginRight:16
+  },
+  viewBookingText: {
+    fontSize: 16,
+    color: '#0E7490',
+    fontWeight: '600',
+    fontFamily: getFontFamily(true, 'semiBold'),
   },
   section: {
     paddingHorizontal: 20,
@@ -258,4 +259,3 @@ const styles = StyleSheet.create({
     fontFamily: getFontFamily(true, 'bold'),
   },
 });
-

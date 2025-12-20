@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Pressable,
 } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute, CommonActions } from '@react-navigation/native';
 import { ArrowLeft, Check } from 'react-native-feather';
 import { getFontFamily } from '../../utils/fontFamily';
 import AppScreenWrapper from '../../AppScreenWrapper';
@@ -16,9 +16,20 @@ const PaymentSuccessScreen = () => {
   const { bookingData, totalAmount } = route.params || {};
 
   const handleViewBooking = () => {
-    // Navigate to booking details screen (can be implemented later)
-    console.log('View booking pressed');
-    navigation.navigate('HomeDashBoard');
+    // Navigate back to BottomBarNavigation (Home tab) to show bottom navigation
+     navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [
+          {
+            name: 'BottomBarNavigation',
+            params: {
+              screen: 'Bookings',
+            },
+          },
+        ],
+      }),
+    );
   };
 
   const handleViewReceipt = () => {
